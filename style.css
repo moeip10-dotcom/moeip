@@ -71,12 +71,12 @@ html[dir="rtl"] body { font-family: var(--font-fa); }
 .logo-area { display: flex; align-items: center; }
 .logo { font-family: var(--font-logo); font-size: 1.8rem; color: var(--gold); text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); letter-spacing: 2px; direction: ltr; }
 .divider { height: 30px; width: 1px; background: linear-gradient(to bottom, transparent, var(--border-color), transparent); margin: 0 20px; }
-.nav-list { display: flex; gap: 30px; list-style: none; }
+.nav-list { display: flex; gap: 25px; list-style: none; }
 .nav-link { color: var(--text); text-decoration: none; font-size: 0.95rem; font-weight: 400; position: relative; padding: 10px 0; transition: color 0.3s ease; white-space: nowrap; }
 .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: var(--gold); transition: width 0.4s ease; box-shadow: 0 0 10px var(--gold); border-radius: 2px; }
 .nav-link:hover, .nav-link.active { color: var(--gold); }
 .nav-link:hover::after, .nav-link.active::after { width: 80%; }
-.header-actions { display: flex; align-items: center; gap: 20px; }
+.header-actions { display: flex; align-items: center; gap: 15px; }
 
 .mobile-menu-btn { display: none; background: transparent; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; padding: 5px; }
 
@@ -89,8 +89,27 @@ html[dir="rtl"] body { font-family: var(--font-fa); }
 .lang-btn.active { color: var(--gold); font-weight: 500; }
 .lang-sep { color: var(--border-color); }
 
-.btn-gold { background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark)); color: #1a0a0c; text-decoration: none; padding: 10px 26px; border-radius: 30px; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); border: 1px solid rgba(255, 255, 255, 0.2); white-space: nowrap; }
+.btn-gold { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark)); 
+  color: #1a0a0c; 
+  text-decoration: none; 
+  padding: 10px 26px; 
+  border-radius: 30px; 
+  font-weight: 600; 
+  font-size: 0.95rem; 
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  white-space: nowrap; 
+}
 .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); background: linear-gradient(135deg, var(--gold), #fff3b0, var(--gold)); }
+
+/* آیکون موبایل به صورت پیش‌فرض مخفی است */
+.mobile-only-icon { display: none; }
 
 /* ═══════ بخش Hero (Home) ═══════ */
 .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 100px; position: relative; }
@@ -235,6 +254,166 @@ html[dir="rtl"] .timeline-item.right .timeline-content { flex-direction: row-rev
 .skill-card { opacity: 0; transform: translateY(30px); }
 .skill-card.in-view { opacity: 1; transform: translateY(0); }
 
+/* ═══════ بخش Music Career ═══════ */
+.music { overflow: hidden; }
+.music-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.music-visual {
+  position: relative;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-glow-aura {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--maroon-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+/* استایل عکس سه‌تار */
+.setar-img {
+  width: 100%;
+  max-width: 400px;
+  z-index: 2;
+  animation: floatSetar 6s ease-in-out infinite;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+  mix-blend-mode: screen; 
+}
+html[data-theme="light"] .setar-img {
+  mix-blend-mode: multiply;
+}
+
+@keyframes floatSetar {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+
+.music-note {
+  position: absolute;
+  color: var(--gold);
+  font-size: 1.5rem;
+  z-index: 1;
+  opacity: 0.6;
+  animation: floatNote 8s infinite linear;
+  text-shadow: 0 0 10px var(--gold);
+}
+
+.note-1 { top: 10%; left: 10%; animation-delay: 0s; font-size: 2rem; }
+.note-2 { bottom: 20%; right: 15%; animation-delay: 2s; }
+.note-3 { top: 40%; right: 5%; animation-delay: 4s; font-size: 1.2rem; }
+
+@keyframes floatNote {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translate(-20px, -100px) rotate(20deg); opacity: 0; }
+}
+
+.music-pedestal {
+  position: absolute;
+  bottom: 50px;
+  width: 200px;
+  height: 40px;
+  background: radial-gradient(circle, var(--gold) 0%, var(--maroon-glow) 50%, transparent 100%);
+  filter: blur(10px);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.music-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.music-bio {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.playlist-box {
+  padding: 25px;
+  background: var(--glass-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.playlist-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.playlist-header h3 {
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-family: var(--font-logo);
+}
+html[dir="rtl"] .playlist-header h3 {
+  font-family: var(--font-fa);
+}
+
+.playlist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.artist-col h4 {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.artist-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.artist-col li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-family: var(--font-en);
+  direction: ltr;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.artist-col li i {
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+.artist-col li:hover {
+  color: var(--gold);
+  transform: translateX(5px);
+}
+html[dir="rtl"] .artist-col li:hover {
+  transform: translateX(-5px);
+}
+
+
 /* ═══════ بخش My Setup ═══════ */
 .setup-wrapper {
   position: relative;
@@ -360,7 +539,6 @@ html[dir="rtl"] .timeline-item.right .timeline-content { flex-direction: row-rev
   opacity: 0.6;
 }
 
-/* کانتینر کارت‌ها */
 .specs-container {
   position: absolute;
   inset: 0;
@@ -640,9 +818,9 @@ html[dir="rtl"] .input-group textarea {
 
 /* ═══════ ریسپانسیو تبلت ═══════ */
 @media (max-width: 992px) {
-  .hero-container, .about-container { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-  .hero-text, .about-left { align-items: center; }
-  .bio, .hero-quote, .about-bio { text-align: center; }
+  .hero-container, .about-container, .music-container { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+  .hero-text, .about-left, .music-info { align-items: center; }
+  .bio, .hero-quote, .about-bio, .music-bio { text-align: center; }
   .bio-line { display: none; }
   .socials, .skill-tags { justify-content: center; }
   .social-line { display: none; }
@@ -652,7 +830,7 @@ html[dir="rtl"] .input-group textarea {
   .hero-graphic { height: 500px; }
   .dna-svg { height: 500px; width: 260px; }
   .pedestal { width: 220px; bottom: -10px; }
-  .about-container { padding-top: 50px; }
+  .about-container, .music-container { padding-top: 50px; }
   .glass-card { text-align: left; }
   html[dir="rtl"] .glass-card { text-align: right; }
   
@@ -666,6 +844,10 @@ html[dir="rtl"] .input-group textarea {
   html[dir="rtl"] .timeline-dot { left: auto; right: 0; transform: translateX(50%); }
   .timeline-content { width: 100%; flex-direction: row !important; text-align: left !important; }
   html[dir="rtl"] .timeline-content { flex-direction: row-reverse !important; text-align: right !important; }
+
+  .music-visual { height: 400px; }
+  .setar-img { max-width: 300px; }
+  .playlist-grid { text-align: center; }
 
   .setup-wrapper { flex-direction: column; height: auto; gap: 50px; }
   .laptop-graphic { position: relative; left: auto; top: auto; transform: none; margin-bottom: 30px; animation: none; }
@@ -713,10 +895,26 @@ html[dir="rtl"] .input-group textarea {
   .timeline-icon { margin: 0 auto 10px; }
 
   .skill-card { flex: 0 1 100%; }
-
+  .playlist-grid { grid-template-columns: 1fr; }
   .spec-card-wrapper { width: 100%; }
   
   .contact-left, .contact-right { padding: 20px; }
   .contact-info-item { flex-direction: column; align-items: center; text-align: center; gap: 10px; }
   .contact-socials { justify-content: center; }
+
+  /* ═══ استایل دکمه دانلود در موبایل ═══ */
+  .btn-gold {
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+  .btn-gold span {
+    display: none; /* مخفی کردن متن در موبایل */
+  }
+  .mobile-only-icon {
+    display: block; /* نمایش آیکون در موبایل */
+    font-size: 1rem;
+    margin-top: 2px;
+  }
 }
