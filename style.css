@@ -108,7 +108,6 @@ html[dir="rtl"] body { font-family: var(--font-fa); }
 }
 .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); background: linear-gradient(135deg, var(--gold), #fff3b0, var(--gold)); }
 
-/* آیکون موبایل به صورت پیش‌فرض مخفی است */
 .mobile-only-icon { display: none; }
 
 /* ═══════ بخش Hero (Home) ═══════ */
@@ -282,17 +281,22 @@ html[dir="rtl"] .timeline-item.right .timeline-content { flex-direction: row-rev
   filter: blur(40px);
 }
 
-/* استایل عکس سه‌تار */
+/* 🎯 فیکس نهایی عکس سه‌تار برای دارک و لایت */
 .setar-img {
   width: 100%;
   max-width: 400px;
   z-index: 2;
   animation: floatSetar 6s ease-in-out infinite;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
-  mix-blend-mode: screen; 
+  /* سایه ملایم برای دارک مود */
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
 }
+
+/* افکت مخصوص تم روشن */
 html[data-theme="light"] .setar-img {
-  mix-blend-mode: multiply;
+  /* حذف کامل پس‌زمینه سفید/صورتی عکس */
+  mix-blend-mode: darken; 
+  /* حذف سایه قبلی تا باکس دیده نشه */
+  filter: none; 
 }
 
 @keyframes floatSetar {
@@ -412,7 +416,6 @@ html[dir="rtl"] .playlist-header h3 {
 html[dir="rtl"] .artist-col li:hover {
   transform: translateX(-5px);
 }
-
 
 /* ═══════ بخش My Setup ═══════ */
 .setup-wrapper {
@@ -910,10 +913,10 @@ html[dir="rtl"] .input-group textarea {
     border-radius: 50%;
   }
   .btn-gold span {
-    display: none; /* مخفی کردن متن در موبایل */
+    display: none; 
   }
   .mobile-only-icon {
-    display: block; /* نمایش آیکون در موبایل */
+    display: block;
     font-size: 1rem;
     margin-top: 2px;
   }
