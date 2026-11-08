@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moeip | Portfolio</title>
+
+  <!-- فونت‌ها -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- استایل پروژه -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ پس‌زمینه گرافیکی ═══ -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- ═══ هدر ═══ -->
+  <header class="header">
+    <div class="header-inner">
+      
+      <div class="logo-area">
+        <div class="logo">Moeip</div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="divider desktop-only"></div>
+
+      <nav class="nav" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active" data-en="Home" data-fa="خانه">Home</a></li>
+          <li><a href="#about" class="nav-link" data-en="About" data-fa="درباره من">About</a></li>
+          <li><a href="#journey" class="nav-link" data-en="Journey" data-fa="مسیر من">Journey</a></li>
+          <li><a href="#skills" class="nav-link" data-en="Skills" data-fa="مهارت‌ها">Skills</a></li>
+          <li><a href="#setup" class="nav-link" data-en="Setup" data-fa="ستاپ من">Setup</a></li>
+          <li><a href="#contact" class="nav-link" data-en="Contact" data-fa="تماس">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="divider desktop-only"></div>
+        
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <div class="lang-toggle">
+          <span class="lang-btn active" data-lang="en">EN</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-btn" data-lang="fa">FA</span>
+        </div>
+
+        <!-- دکمه دانلود رزومه -->
+        <a href="#" class="btn-gold desktop-only" id="download-cv-btn" data-en="Download CV" data-fa="دانلود رزومه">Download CV</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══ بخش Home (Hero) ═══ -->
+  <main id="home" class="hero section-scroll-target">
+    <div class="hero-container">
+      <div class="hero-text">
+        <div class="greeting">
+          <span class="gold-line"></span>
+          <span data-en="Hello, I'm Moein Sedghi" data-fa="سلام، من معین صدقی هستم">Hello, I'm Moein Sedghi</span>
+          <span class="badge">Moeip</span>
+        </div>
+
+        <h1 class="title">
+          <span data-en="Experimental Sciences" data-fa="دانش‌آموز رشته">Experimental Sciences</span> <br>
+          <span class="gold-text" data-en="Student" data-fa="تجربی">Student</span>
+        </h1>
+
+        <div class="bio">
+          <span class="bio-line"></span>
+          <p data-en="A student at Sampad Shahid Madani High School, Tabriz." data-fa="دانش‌آموز دبیرستان تیزهوشان شهید مدنی تبریز.">A student at Sampad Shahid Madani High School, Tabriz.</p>
+        </div>
+
+        <div class="hero-quote">
+          <p data-en="Bridging the gap between Medicine & Technology." data-fa="پل زدن میان پزشکی و تکنولوژی.">Bridging the gap between Medicine & Technology.</p>
+        </div>
+
+        <a href="#about" class="scroll-down">
+          <i class="fa-solid fa-computer-mouse"></i>
+          <span data-en="Scroll Down" data-fa="اسکرول کنید">Scroll Down</span>
+        </a>
+      </div>
+
+      <div class="hero-graphic">
+        <div class="graphic-container">
+          <div class="glow-aura"></div>
+          
+          <div class="float-icon icon-1"><i class="fa-solid fa-atom"></i></div>
+          <div class="float-icon icon-2"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="float-icon icon-3"><i class="fa-solid fa-code"></i></div>
+          <div class="float-icon icon-4"><i class="fa-solid fa-flask"></i></div>
+
+          <svg class="dna-svg" viewBox="0 0 300 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f1d570" /><stop offset="50%" stop-color="#d4af37" /><stop offset="100%" stop-color="#aa8c2c" />
+              </linearGradient>
+              <linearGradient id="maroonGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ff4d4d" /><stop offset="50%" stop-color="#800020" /><stop offset="100%" stop-color="#4a0d14" />
+              </linearGradient>
+              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="8" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            <path d="M 150 20 C 250 80, 250 160, 150 220 C 50 280, 50 360, 150 420 C 250 480, 250 560, 150 580" stroke="url(#maroonGrad)" stroke-width="6" stroke-linecap="round" opacity="0.6" filter="url(#glow)"/>
+            <path d="M 150 20 C 50 80, 50 160, 150 220 C 250 280, 250 360, 150 420 C 50 480, 50 560, 150 580" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+            
+            <line x1="190" y1="50" x2="110" y2="50" stroke="#d4af37" stroke-width="3" opacity="0.9"/>
+            <line x1="230" y1="80" x2="70" y2="80" stroke="#d4af37" stroke-width="3" opacity="0.7"/>
+            <line x1="245" y1="110" x2="55" y2="110" stroke="#d4af37" stroke-width="3" opacity="0.4"/>
+            <line x1="235" y1="140" x2="65" y2="140" stroke="#d4af37" stroke-width="3" opacity="0.7"/>
+            <line x1="200" y1="170" x2="100" y2="170" stroke="#d4af37" stroke-width="3" opacity="0.9"/>
+            <line x1="100" y1="240" x2="200" y2="240" stroke="#d4af37" stroke-width="3" opacity="0.9"/>
+            <line x1="60" y1="270" x2="240" y2="270" stroke="#d4af37" stroke-width="3" opacity="0.7"/>
+            <line x1="45" y1="300" x2="255" y2="300" stroke="#d4af37" stroke-width="3" opacity="0.4"/>
+            <line x1="60" y1="330" x2="240" y2="330" stroke="#d4af37" stroke-width="3" opacity="0.7"/>
+            <line x1="100" y1="360" x2="200" y2="360" stroke="#d4af37" stroke-width="3" opacity="0.9"/>
+            <line x1="200" y1="440" x2="100" y2="440" stroke="#d4af37" stroke-width="3" opacity="0.9"/>
+            <line x1="240" y1="470" x2="60" y2="470" stroke="#d4af37" stroke-width="3" opacity="0.7"/>
+            <line x1="255" y1="500" x2="45" y2="500" stroke="#d4af37" stroke-width="3" opacity="0.4"/>
+            <line x1="240" y1="530" x2="60" y2="530" stroke="#d4af37" stroke-width="3" opacity="0.7"/>
+            <line x1="190" y1="560" x2="110" y2="560" stroke="#d4af37" stroke-width="3" opacity="0.9"/>
+          </svg>
+
+          <div class="pedestal">
+            <div class="pedestal-top"></div>
+            <div class="pedestal-base"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══ بخش About Me ═══ -->
+  <section id="about" class="about section-padding section-scroll-target">
+    <div class="about-container">
+      
+      <div class="about-left">
+        <h2 class="section-title" data-en="About Me" data-fa="درباره من">About Me</h2>
+        
+        <p class="about-bio" data-en="I am a student at Sampad Shahid Madani High School in Tabriz, deeply interested in the intersection of medicine and technology. I build web experiences and explore computer hardware." data-fa="من دانش‌آموز دبیرستان تیزهوشان شهید مدنی تبریز هستم و به شدت به ترکیب پزشکی و تکنولوژی علاقه‌مندم. من وب‌سایت می‌سازم و سخت‌افزار کامپیوتر را بررسی می‌کنم.">
+          I am a student at Sampad Shahid Madani High School in Tabriz, deeply interested in the intersection of medicine and technology. I build web experiences and explore computer hardware.
+        </p>
+
+        <div class="skill-tags">
+          <span class="tag"><i class="fa-solid fa-code"></i> HTML</span>
+          <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+          <span class="tag"><i class="fa-brands fa-js"></i> JS</span>
+          <span class="tag"><i class="fa-solid fa-stethoscope"></i> Medical</span>
+          <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <i class="fa-solid fa-folder-open"></i>
+            <h3>3+</h3>
+            <p data-en="Projects" data-fa="پروژه">Projects</p>
+          </div>
+          <div class="stat-box">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>3+</h3>
+            <p data-en="Years Coding" data-fa="سال تجربه">Years Coding</p>
+          </div>
+          <div class="stat-box">
+            <i class="fa-solid fa-language"></i>
+            <h3>5</h3>
+            <p data-en="Languages" data-fa="زبان">Languages</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="glass-card">
+          
+          <div class="card-item">
+            <div class="item-header">
+              <i class="fa-solid fa-graduation-cap gold-icon"></i>
+              <h3 data-en="Education" data-fa="تحصیلات">Education</h3>
+            </div>
+            <p data-en="Sampad Shahid Madani High School, Tabriz" data-fa="دبیرستان تیزهوشان شهید مدنی تبریز">Sampad Shahid Madani High School, Tabriz</p>
+          </div>
+
+          <div class="card-item interests-section">
+            <div class="item-header">
+              <i class="fa-solid fa-star gold-icon"></i>
+              <h3 data-en="Interests" data-fa="علایق">Interests</h3>
+            </div>
+            
+            <ul class="interest-list">
+              <li data-en="Programming" data-fa="برنامه‌نویسی">Programming</li>
+              <li data-en="Sports (Volleyball & Football)" data-fa="ورزش (والیبال و فوتبال)">Sports (Volleyball & Football)</li>
+              
+              <li class="gaming-trigger" id="gaming-btn">
+                <div class="gaming-header">
+                  <span data-en="Gaming" data-fa="گیمینگ">Gaming</span>
+                  <i class="fa-solid fa-chevron-down acc-icon"></i>
+                </div>
+              </li>
+            </ul>
+
+            <div class="game-list-container" id="gaming-content">
+              <ul class="game-list">
+                <li><img src="https://logo.clearbit.com/epicgames.com" alt="Fortnite" class="game-logo" onerror="this.src='https://cdn.simpleicons.org/epicgames/d4af37'"><span>Fortnite</span></li>
+                <li><img src="https://logo.clearbit.com/rockstargames.com" alt="RDR2" class="game-logo" onerror="this.src='https://cdn.simpleicons.org/rockstargames/d4af37'"><span>Red Dead Redemption 2</span></li>
+                <li><img src="https://logo.clearbit.com/naughtydog.com" alt="The Last of Us" class="game-logo" onerror="this.src='https://cdn.simpleicons.org/playstation/d4af37'"><span>The Last of Us</span></li>
+                <li><img src="https://logo.clearbit.com/counter-strike.net" alt="CS2" class="game-logo" onerror="this.src='https://cdn.simpleicons.org/counterstrike/d4af37'"><span>CS2</span></li>
+                <li><img src="https://logo.clearbit.com/facepunch.com" alt="Rust" class="game-logo" onerror="this.src='https://cdn.simpleicons.org/rust/d4af37'"><span>Rust</span></li>
+                <li><img src="https://logo.clearbit.com/ea.com" alt="FIFA/FC" class="game-logo" onerror="this.src='https://cdn.simpleicons.org/ea/d4af37'"><span>FIFA/FC</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-item languages-item">
+            <div class="item-header">
+              <i class="fa-solid fa-globe gold-icon"></i>
+              <h3 data-en="Languages" data-fa="زبان‌ها">Languages</h3>
+            </div>
+            <div class="lang-dots">
+              <span class="dot-item"><span class="dot gold-bg"></span> Turkish</span>
+              <span class="dot-item"><span class="dot gold-bg"></span> Persian</span>
+              <span class="dot-item"><span class="dot gold-bg"></span> English</span>
+              <span class="dot-item"><span class="dot maroon-bg"></span> Arabic (Basic)</span>
+              <span class="dot-item"><span class="dot empty-bg"></span> German (Beginner)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ بخش My Journey (تایم‌لاین) ═══ -->
+  <section id="journey" class="journey section-padding section-scroll-target">
+    <h2 class="section-title center-title" data-en="My Journey" data-fa="مسیر من">My Journey</h2>
+    
+    <div class="timeline">
+      
+      <!-- مرحله 1: تولد -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fa-solid fa-baby-carriage"></i></div>
+          <div class="timeline-text">
+            <span class="timeline-date" data-en="2009" data-fa="۱۳۸۸">2009</span>
+            <h3 data-en="The Beginning" data-fa="شروع داستان">The Beginning</h3>
+            <p data-en="Born in Tabriz." data-fa="متولد شدم در تبریز.">Born in Tabriz.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- مرحله 2: مهدکودک -->
+      <div class="timeline-item right">
+        <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
+          <div class="timeline-text">
+            <span class="timeline-date" data-en="2015" data-fa="۱۳۹۴">2015</span>
+            <h3 data-en="First Steps" data-fa="اولین قدم‌ها">First Steps</h3>
+            <p data-en="Started Kindergarten at Aram." data-fa="شروع مهدکودک آرام.">Started Kindergarten at Aram.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- مرحله 3: پیش‌دبستانی -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+          <div class="timeline-text">
+            <span class="timeline-date" data-en="2016" data-fa="۱۳۹۵">2016</span>
+            <h3 data-en="Preschool" data-fa="پیش‌دبستانی">Preschool</h3>
+            <p data-en="Attended Alavi Preschool." data-fa="شروع پیش‌دبستانی علوی.">Attended Alavi Preschool.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- مرحله 4: ابتدایی -->
+      <div class="timeline-item right">
+        <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="timeline-text">
+            <span class="timeline-date" data-en="2017 – 2022" data-fa="۱۳۹۶ تا ۱۴۰۱">2017 – 2022</span>
+            <h3 data-en="Primary Education" data-fa="دوران ابتدایی">Primary Education</h3>
+            <p data-en="Roozmehr & Farabi Primary Schools." data-fa="مدارس روزمهر و فارابی.">Roozmehr & Farabi Primary Schools.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- مرحله 5: متوسطه اول -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fa-solid fa-trophy"></i></div>
+          <div class="timeline-text">
+            <span class="timeline-date" data-en="2022 – 2024" data-fa="۱۴۰۱ تا ۱۴۰۳">2022 – 2024</span>
+            <h3 data-en="The Gifted Path" data-fa="مسیر استعدادهای درخشان">The Gifted Path</h3>
+            <p data-en="Entered Sampad Shahid Madani Middle School." data-fa="ورود به سمپاد شهید مدنی دوره اول.">Entered Sampad Shahid Madani Middle School.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- مرحله 6: متوسطه دوم -->
+      <div class="timeline-item right">
+        <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fa-solid fa-flask"></i></div>
+          <div class="timeline-text">
+            <span class="timeline-date" data-en="2024 – Present" data-fa="۱۴۰۳ تاکنون">2024 – Present</span>
+            <h3 data-en="Scientific Horizon" data-fa="افق علمی">Scientific Horizon</h3>
+            <p data-en="Sampad Shahid Madani High School." data-fa="دبیرستان سمپاد شهید مدنی دوره دوم.">Sampad Shahid Madani High School.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- مرحله 7: آینده -->
+      <div class="timeline-item left future-item">
+        <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fa-solid fa-staff-snake"></i></div>
+          <div class="timeline-text">
+            <span class="timeline-date" data-en="Future" data-fa="آینده">Future</span>
+            <h3 data-en="The Ultimate Goal" data-fa="هدف نهایی">The Ultimate Goal</h3>
+            <p data-en="Merging Medicine & Technology." data-fa="ترکیب پزشکی و تکنولوژی.">Merging Medicine & Technology.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ بخش Skills (مهارت‌ها) ═══ -->
+  <section id="skills" class="skills section-padding section-scroll-target">
+    <h2 class="section-title center-title" data-en="My Skills" data-fa="مهارت‌های من">My Skills</h2>
+    
+    <div class="skills-grid">
+      
+      <!-- HTML -->
+      <div class="skill-card">
+        <div class="circle-wrap">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+            <circle class="ring-progress" cx="60" cy="60" r="50" data-percent="85" style="stroke: url(#goldGradient);"></circle>
+          </svg>
+          <div class="skill-number"><span class="counter" data-target="85">0</span>%</div>
+        </div>
+        <h3 class="skill-name">HTML</h3>
+      </div>
+
+      <!-- CSS -->
+      <div class="skill-card">
+        <div class="circle-wrap">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+            <circle class="ring-progress" cx="60" cy="60" r="50" data-percent="90" style="stroke: url(#goldGradient);"></circle>
+          </svg>
+          <div class="skill-number"><span class="counter" data-target="90">0</span>%</div>
+        </div>
+        <h3 class="skill-name">CSS</h3>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="skill-card">
+        <div class="circle-wrap">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+            <circle class="ring-progress" cx="60" cy="60" r="50" data-percent="40" style="stroke: url(#goldGradient);"></circle>
+          </svg>
+          <div class="skill-number"><span class="counter" data-target="40">0</span>%</div>
+        </div>
+        <h3 class="skill-name">JavaScript</h3>
+      </div>
+
+      <!-- Python -->
+      <div class="skill-card">
+        <div class="circle-wrap">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+            <circle class="ring-progress" cx="60" cy="60" r="50" data-percent="60" style="stroke: url(#goldGradient);"></circle>
+          </svg>
+          <div class="skill-number"><span class="counter" data-target="60">0</span>%</div>
+        </div>
+        <h3 class="skill-name">Python</h3>
+      </div>
+
+      <!-- AI Usage -->
+      <div class="skill-card">
+        <div class="circle-wrap">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+            <circle class="ring-progress" cx="60" cy="60" r="50" data-percent="80" style="stroke: url(#goldGradient);"></circle>
+          </svg>
+          <div class="skill-number"><span class="counter" data-target="80">0</span>%</div>
+        </div>
+        <h3 class="skill-name" data-en="AI Usage" data-fa="استفاده از هوش مصنوعی">AI Usage</h3>
+      </div>
+
+      <!-- PC Software/Hardware -->
+      <div class="skill-card">
+        <div class="circle-wrap">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+            <circle class="ring-progress" cx="60" cy="60" r="50" data-percent="95" style="stroke: url(#goldGradient);"></circle>
+          </svg>
+          <div class="skill-number"><span class="counter" data-target="95">0</span>%</div>
+        </div>
+        <h3 class="skill-name" data-en="PC Software/Hardware" data-fa="نرم‌افزار و سخت‌افزار">PC Software/Hardware</h3>
+      </div>
+
+      <!-- Medical -->
+      <div class="skill-card special-card">
+        <div class="circle-wrap">
+          <div class="special-icon-wrap">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+        </div>
+        <h3 class="skill-name" data-en="Medical" data-fa="پزشکی">Medical</h3>
+        <p class="expert-text" data-en="Learning" data-fa="در حال یادگیری">Learning</p>
+      </div>
+
+      <!-- Gaming -->
+      <div class="skill-card special-card">
+        <div class="circle-wrap">
+          <div class="special-icon-wrap">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+        </div>
+        <h3 class="skill-name" data-en="Gaming" data-fa="گیمینگ">Gaming</h3>
+        <p class="expert-text" data-en="True Gamer" data-fa="گیمر واقعی">True Gamer</p>
+      </div>
+
+    </div>
+
+    <!-- تعریف گرادیانت طلایی برای دایره‌ها -->
+    <svg width="0" height="0">
+      <defs>
+        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f1d570" />
+          <stop offset="50%" stop-color="#d4af37" />
+          <stop offset="100%" stop-color="#aa8c2c" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+  </section>
+
+  <!-- ═══ بخش My Setup (ستاپ من) ═══ -->
+  <section id="setup" class="setup section-padding section-scroll-target">
+    <h2 class="section-title center-title" data-en="My Setup" data-fa="ستاپ من">My Setup</h2>
+    
+    <div class="setup-wrapper">
+      
+      <!-- لپ‌تاپ CSS -->
+      <div class="laptop-graphic">
+        <div class="laptop-shadow"></div>
+        <div class="laptop-screen">
+          <div class="screen-glow"></div>
+          <div class="screen-content">
+            <span class="logo-text">LOQ</span>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+          </div>
+        </div>
+        <div class="laptop-base">
+          <div class="laptop-trackpad"></div>
+        </div>
+        <div class="laptop-stand"></div>
+      </div>
+
+      <!-- کارت‌های مشخصات -->
+      <div class="specs-container">
+        
+        <div class="spec-card-wrapper spec-top">
+          <div class="spec-card">
+            <i class="fa-solid fa-memory gold-icon"></i>
+            <div class="spec-info">
+              <span class="spec-label">RAM</span>
+              <span class="spec-value">16GB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="spec-card-wrapper spec-left-1">
+          <div class="spec-card">
+            <i class="fa-solid fa-microchip gold-icon"></i>
+            <div class="spec-info">
+              <span class="spec-label">CPU</span>
+              <span class="spec-value">Core i7-13650HX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="spec-card-wrapper spec-left-2">
+          <div class="spec-card">
+            <i class="fa-solid fa-tv gold-icon"></i>
+            <div class="spec-info">
+              <span class="spec-label">GPU</span>
+              <span class="spec-value">RTX 4050</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="spec-card-wrapper spec-right-1">
+          <div class="spec-card">
+            <i class="fa-solid fa-desktop gold-icon"></i>
+            <div class="spec-info">
+              <span class="spec-label">Display</span>
+              <span class="spec-value">144Hz</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="spec-card-wrapper spec-right-2">
+          <div class="spec-card">
+            <i class="fa-solid fa-hard-drive gold-icon"></i>
+            <div class="spec-info">
+              <span class="spec-label">Storage</span>
+              <span class="spec-value">512GB + 2TB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="spec-card-wrapper spec-bottom">
+          <div class="spec-card">
+            <i class="fa-brands fa-windows gold-icon"></i>
+            <div class="spec-info">
+              <span class="spec-label">OS</span>
+              <span class="spec-value">Win 11 Pro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- خطوط اتصال -->
+        <svg class="connection-lines" viewBox="0 0 1000 600" preserveAspectRatio="none">
+          <line x1="500" y1="150" x2="500" y2="250" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4" opacity="0.4"/>
+          <line x1="250" y1="200" x2="400" y2="300" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4" opacity="0.4"/>
+          <line x1="250" y1="400" x2="400" y2="350" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4" opacity="0.4"/>
+          <line x1="750" y1="200" x2="600" y2="300" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4" opacity="0.4"/>
+          <line x1="750" y1="400" x2="600" y2="350" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4" opacity="0.4"/>
+          <line x1="500" y1="450" x2="500" y2="550" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4" opacity="0.4"/>
+        </svg>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ بخش Contact (تماس با من) ═══ -->
+  <section id="contact" class="contact section-padding section-scroll-target">
+    <h2 class="section-title center-title" data-en="Contact Me" data-fa="تماس با من">Contact Me</h2>
+    
+    <div class="contact-container">
+      
+      <!-- سمت چپ: اطلاعات تماس -->
+      <div class="contact-left glass-card">
+        <p class="contact-desc" data-en="Let's build something amazing together. Feel free to reach out for collaborations or just a friendly hello." data-fa="بیا با هم یه چیز فوق‌العاده بسازیم. برای همکاری یا حتی یه سلام دوستانه، راحت با من در تماس باش.">
+          Let's build something amazing together. Feel free to reach out for collaborations or just a friendly hello.
+        </p>
+
+        <div class="contact-info-item">
+          <i class="fa-solid fa-envelope gold-icon"></i>
+          <div>
+            <h4 data-en="Email" data-fa="ایمیل">Email</h4>
+            <a href="mailto:moeip10@gmail.com">moeip10@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <i class="fa-solid fa-phone gold-icon"></i>
+          <div>
+            <h4 data-en="Phone" data-fa="تلفن">Phone</h4>
+            <p dir="ltr">+98 990 131 2917</p>
+            <p dir="ltr">+98 905 787 1254</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <i class="fa-solid fa-location-dot gold-icon"></i>
+          <div>
+            <h4 data-en="Location" data-fa="موقعیت مکانی">Location</h4>
+            <p data-en="Tabriz, Iran" data-fa="تبریز، ایران">Tabriz, Iran</p>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Telegram 1"><i class="fa-brands fa-telegram"></i></a>
+          <a href="#" aria-label="Telegram 2"><i class="fa-brands fa-telegram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- سمت راست: فرم تماس -->
+      <div class="contact-right glass-card">
+        <form id="contact-form">
+          <div class="input-group">
+            <i class="fa-solid fa-user gold-icon"></i>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          
+          <div class="input-group">
+            <i class="fa-solid fa-envelope gold-icon"></i>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          
+          <div class="input-group textarea-group">
+            <i class="fa-solid fa-comment gold-icon"></i>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-send" id="submit-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span data-en="Send Message" data-fa="ارسال پیام">Send Message</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
