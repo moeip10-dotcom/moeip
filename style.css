@@ -46,7 +46,7 @@ html[data-theme="light"] {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px; 
-  overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+  overflow-x: hidden;
 }
 
 body {
@@ -272,7 +272,6 @@ html[dir="rtl"] .timeline-item.right .timeline-content { flex-direction: row-rev
   filter: blur(40px);
 }
 
-/* 🎯 فیکس نهایی عکس سه‌تار برای دارک و لایت */
 .setar-img {
   width: 100%;
   max-width: 400px;
@@ -892,7 +891,6 @@ html[dir="rtl"] .input-group textarea {
 @media (max-width: 768px) {
   .desktop-only { display: none !important; }
   
-  /* 🎯 فیکس هدر در موبایل */
   .header { top: 15px; width: 95%; }
   .header-inner { padding: 10px 15px; flex-wrap: nowrap; }
   .logo-area { width: auto; gap: 10px; }
@@ -928,7 +926,6 @@ html[dir="rtl"] .input-group textarea {
   .skill-card { flex: 0 1 100%; }
   .playlist-grid { grid-template-columns: 1fr; }
 
-  /* 🎯 فیکس کردن سایز لپ‌تاپ تا از صفحه بیرون نزنه */
   .laptop-graphic { 
     width: 100%; 
     max-width: 320px; 

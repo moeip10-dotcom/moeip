@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   
+  // ═══════ 1. سیستم تغییر تم ═══════
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeIcon = themeToggleBtn.querySelector('i');
   const htmlTag = document.documentElement;
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // ═══════ 2. تغییر زبان ═══════
   const langToggle = document.querySelector('.lang-toggle');
   const langBtns = document.querySelectorAll('.lang-btn');
   const translatableElements = document.querySelectorAll('[data-en][data-fa]');
@@ -63,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setLanguage(newLang);
   });
 
+  // ═══════ 3. منوی موبایل ═══════
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const navMenu = document.getElementById('nav-menu');
 
@@ -70,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navMenu.classList.toggle('active');
   });
 
+  // ═══════ 4. فعال‌سازی هوشمند لینک‌های منو (با اسکرول) ═══════
   const sections = document.querySelectorAll('.section-scroll-target');
   const navLinks = document.querySelectorAll('.nav-link');
 
@@ -101,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ═══════ 5. باز و بسته کردن لیست بازی‌ها ═══════
   const gamingBtn = document.getElementById('gaming-btn');
   const gamingContent = document.getElementById('gaming-content');
 
@@ -109,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gamingContent.classList.toggle('active');
   });
 
+  // ═══════ 6. دکمه دانلود رزومه ═══════
   const downloadCvBtn = document.getElementById('download-cv-btn');
   
   downloadCvBtn.addEventListener('click', (e) => {
@@ -133,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // ═══════ 7. انیمیشن تایم‌لاین و ستاپ ═══════
   const timelineItems = document.querySelectorAll('.timeline-item');
   const specCards = document.querySelectorAll('.spec-card');
 
@@ -165,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupObserver.observe(setupSection);
   }
 
+  // ═══════ 8. انیمیشن مهارت‌ها ═══════
   const skillsSection = document.getElementById('skills');
   const skillCards = document.querySelectorAll('.skill-card');
   const counters = document.querySelectorAll('.counter');
@@ -218,6 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
     skillsObserver.observe(skillsSection);
   }
 
+  // ═══════ 9. فرم تماس ═══════
   const contactForm = document.getElementById('contact-form');
   const submitBtn = document.getElementById('submit-btn');
   const scriptURL = 'https://script.google.com/macros/s/AKfycbzeqyb_McNL4spS6lSfj2Yah50HcnJzOSmu8k7cQwGlcRdy5gOgMIGdLLkkcrMj3N16/exec';
