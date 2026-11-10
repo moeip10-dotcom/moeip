@@ -46,6 +46,7 @@ html[data-theme="light"] {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px; 
+  overflow-x: hidden; /* جلوگیری از اسکرول افقی */
 }
 
 body {
@@ -90,21 +91,11 @@ html[dir="rtl"] body { font-family: var(--font-fa); }
 .lang-sep { color: var(--border-color); }
 
 .btn-gold { 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
   background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark)); 
-  color: #1a0a0c; 
-  text-decoration: none; 
-  padding: 10px 26px; 
-  border-radius: 30px; 
-  font-weight: 600; 
-  font-size: 0.95rem; 
-  transition: all 0.3s ease; 
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); 
-  border: 1px solid rgba(255, 255, 255, 0.2); 
-  white-space: nowrap; 
+  color: #1a0a0c; text-decoration: none; padding: 10px 26px; border-radius: 30px; 
+  font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; 
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); border: 1px solid rgba(255, 255, 255, 0.2); white-space: nowrap; 
 }
 .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); background: linear-gradient(135deg, var(--gold), #fff3b0, var(--gold)); }
 
@@ -150,7 +141,7 @@ html[data-theme="light"] .pedestal-base { background: #dcd6c9; }
 .about-container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .about-left { display: flex; flex-direction: column; gap: 25px; }
 .section-title { font-size: 3.5rem; font-family: var(--font-logo); color: var(--text); position: relative; padding-bottom: 15px; white-space: nowrap; }
-.center-title { text-align: center; margin-bottom: 50px; display: inline-block; left: 50%; transform: translateX(-50%); }
+.center-title { display: block; text-align: center; margin: 0 auto 50px auto; position: relative; left: auto; transform: none; }
 html[dir="rtl"] .section-title { font-family: var(--font-fa); }
 .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 3px; background: linear-gradient(to right, var(--gold), var(--gold-light)); border-radius: 3px; box-shadow: 0 0 10px var(--gold); }
 .center-title::after { left: 50%; transform: translateX(-50%); }
@@ -287,15 +278,11 @@ html[dir="rtl"] .timeline-item.right .timeline-content { flex-direction: row-rev
   max-width: 400px;
   z-index: 2;
   animation: floatSetar 6s ease-in-out infinite;
-  /* سایه ملایم برای دارک مود */
   filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
 }
 
-/* افکت مخصوص تم روشن */
 html[data-theme="light"] .setar-img {
-  /* حذف کامل پس‌زمینه سفید/صورتی عکس */
   mix-blend-mode: darken; 
-  /* حذف سایه قبلی تا باکس دیده نشه */
   filter: none; 
 }
 
@@ -828,8 +815,11 @@ html[dir="rtl"] .input-group textarea {
   .socials, .skill-tags { justify-content: center; }
   .social-line { display: none; }
   .title, .section-title { font-size: 3rem; }
-  .section-title::after { left: 50%; transform: translateX(-50%); }
-  html[dir="rtl"] .section-title::after { left: 50%; right: auto; transform: translateX(-50%); }
+  
+  .center-title { left: auto; transform: none; text-align: center; margin: 0 auto 50px auto; }
+  .center-title::after { left: 50%; transform: translateX(-50%); }
+  html[dir="rtl"] .center-title::after { left: 50%; right: auto; transform: translateX(-50%); }
+
   .hero-graphic { height: 500px; }
   .dna-svg { height: 500px; width: 260px; }
   .pedestal { width: 220px; bottom: -10px; }
@@ -841,12 +831,47 @@ html[dir="rtl"] .input-group textarea {
 
   .timeline::after { left: 20px; transform: none; }
   html[dir="rtl"] .timeline::after { left: auto; right: 20px; transform: none; }
-  .timeline-item { display: flex; justify-content: flex-start; padding-left: 60px; padding-right: 0; }
-  html[dir="rtl"] .timeline-item { justify-content: flex-end; padding-left: 0; padding-right: 60px; }
-  .timeline-dot { position: absolute; left: 0; top: 30px; transform: translateX(-50%); }
-  html[dir="rtl"] .timeline-dot { left: auto; right: 0; transform: translateX(50%); }
-  .timeline-content { width: 100%; flex-direction: row !important; text-align: left !important; }
-  html[dir="rtl"] .timeline-content { flex-direction: row-reverse !important; text-align: right !important; }
+  
+  .timeline-item { 
+    display: block !important; 
+    width: 100%; 
+    padding-left: 50px; 
+    padding-right: 0; 
+  }
+  html[dir="rtl"] .timeline-item { 
+    padding-left: 0; 
+    padding-right: 50px; 
+  }
+  
+  .timeline-dot { 
+    position: absolute; 
+    left: 20px; 
+    top: 20px; 
+    transform: translateX(-50%); 
+    right: auto;
+  }
+  html[dir="rtl"] .timeline-dot { 
+    left: auto; 
+    right: 20px; 
+    transform: translateX(50%); 
+  }
+  
+  .timeline-content { 
+    width: 100%; 
+    display: flex !important;
+    flex-direction: column !important; 
+    text-align: center !important; 
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  html[dir="rtl"] .timeline-content { 
+    flex-direction: column !important; 
+    text-align: center !important; 
+    align-items: center !important;
+  }
+  
+  .timeline-text { text-align: center !important; width: 100%; }
+  .timeline-icon { margin: 0 auto 10px auto !important; }
 
   .music-visual { height: 400px; }
   .setar-img { max-width: 300px; }
@@ -867,13 +892,20 @@ html[dir="rtl"] .input-group textarea {
 @media (max-width: 768px) {
   .desktop-only { display: none !important; }
   
+  /* 🎯 فیکس هدر در موبایل */
   .header { top: 15px; width: 95%; }
-  .header-inner { padding: 10px 15px; }
-  .logo-area { width: 100%; justify-content: space-between; }
+  .header-inner { padding: 10px 15px; flex-wrap: nowrap; }
+  .logo-area { width: auto; gap: 10px; }
   .mobile-menu-btn { display: block; }
+  .header-actions { gap: 10px; }
+  .theme-toggle { width: 32px; height: 32px; font-size: 0.9rem; }
+  .lang-toggle { padding: 4px 10px; font-size: 0.75rem; }
+  .btn-gold { padding: 0; width: 32px; height: 32px; border-radius: 50%; }
+  .btn-gold span { display: none; }
+  .mobile-only-icon { display: block; font-size: 0.9rem; margin-top: 2px; }
 
   .nav {
-    position: fixed; top: 75px; left: 50%; transform: translateX(-50%) translateY(-20px);
+    position: fixed; top: 70px; left: 50%; transform: translateX(-50%) translateY(-20px);
     width: 90%; background: var(--header-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
     border: 1px solid var(--border-color); border-radius: 20px; padding: 20px;
     opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99;
@@ -893,31 +925,28 @@ html[dir="rtl"] .input-group textarea {
   .card-item p, .interest-list, .game-list-container { margin-left: 0; }
   html[dir="rtl"] .card-item p, html[dir="rtl"] .interest-list, html[dir="rtl"] .game-list-container { margin-right: 0; }
 
-  .timeline-content { flex-direction: column !important; text-align: center !important; padding: 15px; }
-  html[dir="rtl"] .timeline-content { flex-direction: column !important; text-align: center !important; }
-  .timeline-icon { margin: 0 auto 10px; }
-
   .skill-card { flex: 0 1 100%; }
   .playlist-grid { grid-template-columns: 1fr; }
+
+  /* 🎯 فیکس کردن سایز لپ‌تاپ تا از صفحه بیرون نزنه */
+  .laptop-graphic { 
+    width: 100%; 
+    max-width: 320px; 
+    margin: 0 auto 30px auto; 
+    left: auto; top: auto; transform: none; 
+  }
+  .laptop-screen { width: 280px; height: 180px; border-width: 8px; }
+  .laptop-base { width: 300px; height: 15px; }
+  .laptop-trackpad { width: 30px; height: 3px; }
+  .logo-text { font-size: 1.2rem; margin-bottom: 10px; }
+  .code-line { width: 100px; height: 3px; }
+  .code-line:nth-child(2) { width: 140px; }
+  .code-line:nth-child(3) { width: 80px; }
+  .code-line:nth-child(4) { width: 120px; }
+
   .spec-card-wrapper { width: 100%; }
   
   .contact-left, .contact-right { padding: 20px; }
   .contact-info-item { flex-direction: column; align-items: center; text-align: center; gap: 10px; }
   .contact-socials { justify-content: center; }
-
-  /* ═══ استایل دکمه دانلود در موبایل ═══ */
-  .btn-gold {
-    padding: 0;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-  }
-  .btn-gold span {
-    display: none; 
-  }
-  .mobile-only-icon {
-    display: block;
-    font-size: 1rem;
-    margin-top: 2px;
-  }
 }
