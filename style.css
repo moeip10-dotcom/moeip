@@ -22,6 +22,9 @@
   --border-color: rgba(212, 175, 55, 0.2);
   --header-bg: rgba(15, 10, 10, 0.6);
   
+  /* متغیر جدید برای پس‌زمینه یکدست کارت‌ها در موبایل (دارک مود) */
+  --solid-card-bg: #140d0d; 
+  
   --font-logo: 'Cinzel', serif;
   --font-en: 'Poppins', sans-serif;
   --font-fa: 'Vazirmatn', sans-serif;
@@ -41,6 +44,9 @@ html[data-theme="light"] {
   --card-bg: rgba(255, 255, 255, 0.85);
   --border-color: rgba(184, 149, 46, 0.3);
   --header-bg: rgba(255, 255, 255, 0.8);
+  
+  /* متغیر جدید برای پس‌زمینه یکدست کارت‌ها در موبایل (لایت مود) */
+  --solid-card-bg: #ffffff;
 }
 
 html {
@@ -932,7 +938,8 @@ html[dir="rtl"] .input-group textarea {
     flex: 0 1 100%; 
     backdrop-filter: none; 
     -webkit-backdrop-filter: none;
-    background: rgba(15, 10, 10, 0.95); /* پس‌زمینه یکدست بدون بلور */
+    background: var(--solid-card-bg); /* استفاده از متغیر برای سازگاری با تم لایت و دارک */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* سایه ملایم برای جدا شدن از پس‌زمینه */
   }
   
   .skill-card::before { 
