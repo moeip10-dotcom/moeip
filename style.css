@@ -96,6 +96,7 @@ html[dir="rtl"] body { font-family: var(--font-fa); }
   color: #1a0a0c; text-decoration: none; padding: 10px 26px; border-radius: 30px; 
   font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; 
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); border: 1px solid rgba(255, 255, 255, 0.2); white-space: nowrap; 
+  font-family: inherit;
 }
 .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); background: linear-gradient(135deg, var(--gold), #fff3b0, var(--gold)); }
 
@@ -699,6 +700,7 @@ html[dir="rtl"] .artist-col li:hover {
   border: 1px solid var(--border-color);
   color: var(--gold);
   font-size: 1.2rem;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
@@ -755,7 +757,7 @@ html[dir="rtl"] .input-group .gold-icon {
   padding: 18px 20px 18px 50px;
   color: var(--text);
   font-size: 1rem;
-  font-family: var(--font-en);
+  font-family: inherit;
   transition: all 0.3s ease;
   outline: none;
   resize: none;
@@ -776,6 +778,7 @@ html[dir="rtl"] .input-group textarea {
 .input-group input::placeholder,
 .input-group textarea::placeholder {
   color: var(--text-muted);
+  font-family: inherit;
 }
 
 .btn-send {
@@ -794,6 +797,7 @@ html[dir="rtl"] .input-group textarea {
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
   margin-top: 10px;
+  font-family: inherit;
 }
 
 .btn-send:hover {
@@ -923,8 +927,29 @@ html[dir="rtl"] .input-group textarea {
   .card-item p, .interest-list, .game-list-container { margin-left: 0; }
   html[dir="rtl"] .card-item p, html[dir="rtl"] .interest-list, html[dir="rtl"] .game-list-container { margin-right: 0; }
 
-  .skill-card { flex: 0 1 100%; }
+  /* 🎯 بهینه‌سازی انیمیشن‌های بخش مهارت‌ها برای موبایل */
+  .skill-card { 
+    flex: 0 1 100%; 
+    backdrop-filter: none; 
+    -webkit-backdrop-filter: none;
+    background: rgba(15, 10, 10, 0.95); /* پس‌زمینه یکدست بدون بلور */
+  }
+  
+  .skill-card::before { 
+    display: none; /* حذف هاله سنگین پشت کارت */
+  }
+  
+  .ring-progress { 
+    filter: none; /* حذف درخشش سنگین روی حلقه */
+    transition: stroke-dashoffset 1.5s ease-out; /* انیمیشن سریع‌تر */
+  }
+  
+  .special-icon-wrap { 
+    box-shadow: none; /* حذف سایه سنگین */
+  }
+
   .playlist-grid { grid-template-columns: 1fr; }
+  .spec-card-wrapper { width: 100%; }
 
   .laptop-graphic { 
     width: 100%; 
@@ -940,8 +965,6 @@ html[dir="rtl"] .input-group textarea {
   .code-line:nth-child(2) { width: 140px; }
   .code-line:nth-child(3) { width: 80px; }
   .code-line:nth-child(4) { width: 120px; }
-
-  .spec-card-wrapper { width: 100%; }
   
   .contact-left, .contact-right { padding: 20px; }
   .contact-info-item { flex-direction: column; align-items: center; text-align: center; gap: 10px; }

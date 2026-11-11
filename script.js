@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         specCards.forEach((card, index) => {
           setTimeout(() => {
             card.classList.add('in-view');
-          }, index * 200);
+          }, index * 150);
         });
         setupObserver.unobserve(entry.target);
       }
@@ -179,10 +179,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const rings = document.querySelectorAll('.ring-progress');
   
   let skillsAnimated = false;
+  const isMobile = window.innerWidth <= 768; // تشخیص موبایل
 
   const animateCounter = (counter) => {
     const target = +counter.getAttribute('data-target');
-    const duration = 2000;
+    const duration = isMobile ? 1000 : 2000; // سرعت بیشتر روی گوشی
     const increment = target / (duration / 16);
     let current = 0;
     const updateCounter = () => {
@@ -201,11 +202,16 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting && !skillsAnimated) {
         skillsAnimated = true;
+        
+        // تاخیر کمتر برای ظاهر شدن کارت‌ها روی گوشی
+        const staggerDelay = isMobile ? 50 : 150; 
+        
         skillCards.forEach((card, index) => {
           setTimeout(() => {
             card.classList.add('in-view');
-          }, index * 150);
+          }, index * staggerDelay);
         });
+
         setTimeout(() => {
           rings.forEach(ring => {
             const percent = +ring.getAttribute('data-percent');
@@ -213,14 +219,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const offset = circumference - (percent / 100) * circumference;
             ring.style.strokeDashoffset = offset;
           });
-        }, 500);
+        }, isMobile ? 300 : 500); // شروع زودتر پر شدن حلقه‌ها
+
         setTimeout(() => {
           counters.forEach(counter => animateCounter(counter));
-        }, 500);
+        }, isMobile ? 300 : 500);
+
         skillsObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.2 }); // تریگر شدن سریع‌تر با اسکرول
 
   if (skillsSection) {
     skillsObserver.observe(skillsSection);
